@@ -1,0 +1,233 @@
+/*
+    Repsonsive Layout Notes:
+
+    Under 600: 
+        
+        Total page height: 230vh + (--nav-height * 2)(>=~20vh) >= ~250vh
+
+        Navbar:
+            height: max(16vw, 10vh)
+
+            Has dropdown menu
+
+        Home:
+            height: 130vh
+                story: 70vh (55vh content, 15vh padding)
+                header: 45vh - var(--nav-height)(~10vh) = ~35vh !! DIFF
+                transition: 15vh
+
+        About Me:
+            height: 100vh
+
+        Footer:
+            height: whatever the --nav-height is
+    
+    Over 600: 
+        
+        Total page height: 255vh + (--nav-height * 2)(20vh) = 275vh
+
+        Navbar:
+            height: 10vh
+
+        Home:
+            height: 155vh
+                story: 70vh (55vh content, 15vh padding)
+                header: 60vh - var(--nav-height)(10vh) = 50vh !! DIFF
+                transition: 25vh
+
+        About Me:
+            height: 100vh
+
+        Footer:
+            height: whatever the --nav-height is
+*/
+
+
+/* Phone Landscape 
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+    * {
+        
+    }
+} */
+
+/* Tablet and Up*/
+@media only screen and (min-width: 600px) {
+    :root {
+        --nav-height: 10vh;
+    }
+
+    /* Navbar */
+
+    #navbar-leftbar {
+        width: 50%;
+    }
+
+    #navbar-midbar {
+        left: 40%;
+
+        width: 0%;
+    }
+
+    #navbar-rightbar {
+        top: 50%;
+        left: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: 50%;
+    }
+
+    #navbar-name {
+        font-size: clamp(1em, 5vw, 2em);
+    }
+
+    #navbar-sub {
+        margin-top: 0px;
+        font-size: clamp(11px, 3vw, 1em);
+    }
+
+    .contact {
+        font-size: clamp(11px, 3vw, 1em);
+    }
+
+    #navbar-sections {
+        height: auto;
+        width: auto;
+        background-color: inherit;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-section {
+        margin: 1vh 0.2vw 1vh 0.2vw;
+        padding: 0vw 1vw 1vh 1vw;
+
+        font-size: clamp(1.25em, 2vw, 1.4em);
+    }
+
+    .activeH {
+        border-bottom: solid #3388ff 3px;
+        color: inherit;
+    }
+
+    .activeA {
+        border-bottom: solid #00e6ff 3px;
+        color: inherit;
+    }
+
+    .activeP {
+        border-bottom: solid #00FF99 3px;
+        color: inherit;
+    }
+
+    /* Home */
+
+    #home {
+        height: 155vh;
+    }
+    
+    #home-container {
+        height: 155vh;
+        background-image: linear-gradient(#080c10 15vh, #080c1090 60vh, #080c1000 85vh, #080c1000 115vh, #080c10 130vh);
+    }
+
+    #home-header {
+        height: calc(60vh - var(--nav-height));
+    }
+    
+    #header-particles {
+        top: -25vh;
+    
+        height: 75vh;
+    }
+
+    .icon-border {
+        padding: min(1em, 1vw);
+    }
+
+    .icons {
+        width: min(1.6em, 7vw);
+        height: min(1.6em, 7vw);
+        font-size: min(1.6em, 7vw);
+    }
+
+    #home-story {
+        font-size: clamp(1.2em, 3vw, 1.35em);
+        padding: 10vh 10vw 5vh 10vw;
+    }
+
+    /* #home img {
+        width: 70vw;
+        height: 70vh;
+    
+        position: absolute;
+        top: 5vh;
+        left: 15vw;
+    
+        object-fit: cover;
+        mask-image: 
+            linear-gradient(to bottom, transparent, #000, transparent),
+            linear-gradient(to bottom, transparent, #000, transparent),
+            linear-gradient(to bottom, transparent, #000, transparent),
+            linear-gradient(to bottom, transparent, #000, transparent),
+            linear-gradient(to bottom, transparent, #000, transparent);
+        mask-size: 
+            18% 70%;
+        mask-position: 
+            0% 0%, 
+            25% 50%, 
+            50% 30%, 
+            75% 70%, 
+            100% 100%;
+        mask-repeat: no-repeat;
+    } */
+
+    #home-transition {
+        height: 25vh;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Home */
+
+    .header-title {
+        top: 15%;
+    }
+
+    #home-story {
+        font-size: clamp(1.3em, 2.6vw, 1.35em);
+        padding: 10vh 15vw 5vh 15vw;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    /* Home */
+
+    .icon-border {
+        padding: min(0.8em, 0.8vw);
+    }
+
+    #home-story {
+        font-size: 1.4em;
+        padding: 10vh 20vw 5vh 15vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Home */
+    
+    .header-title {
+        top: 15%;
+    }
+
+    #home-story {
+        font-size: 1.45em;
+        padding: 10vh 22.5vw 5vh 22.5vw;
+    }
+}

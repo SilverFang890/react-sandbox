@@ -1,0 +1,37 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.name {
+    font-size: 2.8em;
+}
+
+.desc {
+    margin-bottom: 2vmin;
+}
+
+.link {
+    color: #fb9850;
+    text-decoration: underline;
+}
+
+#tsparticles {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
